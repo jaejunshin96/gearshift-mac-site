@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gearshift Support</title>
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg: #f4f2ee; --plate: #fff; --text: #1c1b19; --muted: #6b665d; --line: #e2ded6; --brass: #e3a64a; --key: #fff; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #121212; --plate: #1d1d1d; --text: #f2f0ec; --muted: #a39d92; --line: #2e2e2e; --key: #2a2a2a; } }
+  :root[data-theme="dark"] { --bg: #121212; --plate: #1d1d1d; --text: #f2f0ec; --muted: #a39d92; --line: #2e2e2e; --key: #2a2a2a; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.65 -apple-system, BlinkMacSystemFont, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+  header { display: flex; align-items: center; gap: 16px; } header img { width: 64px; height: 64px; }
+  h1 { font-size: 34px; margin: 0; } h2 { font-size: 22px; margin: 40px 0 8px; }
+  .muted { color: var(--muted); }
+  kbd { display: inline-block; padding: 0 7px; border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 6px; background: var(--key); font: 600 0.9em -apple-system, sans-serif; }
+  code { font: 0.88em ui-monospace, Menlo, monospace; background: var(--plate); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
+  details { background: var(--plate); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin-top: 10px; }
+  summary { cursor: pointer; font-weight: 600; } details p { margin: 10px 0 0; color: var(--muted); }
+  .contact { margin-top: 40px; padding: 20px; border-radius: 14px; background: var(--plate); border: 1px solid var(--line); }
+  a { color: inherit; } a.button { display: inline-block; margin-top: 8px; padding: 10px 18px; border-radius: 10px; background: var(--brass); color: #1c1b19; font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+  <header><img src="icon.png" alt=""><div><h1>Gearshift Support</h1><p class="muted" style="margin:0">Convert files with one key — right from Finder</p></div></header>
+
+  <h2>Getting started</h2>
+  <p>After you open Gearshift, a gear icon appears in the menu bar and a short tutorial opens. In <em>Try It Yourself</em>, drag the sample photo and press a key while dragging:</p>
+  <ul>
+    <li><kbd>⇧</kbd> <strong>Convert</strong> — change formats (PNG → JPG, MOV → MP4, video → GIF, DOCX → PDF…)</li>
+    <li><kbd>⌘</kbd> <strong>Tools</strong> — compress, resize, rotate, remove backgrounds, merge PDFs…</li>
+    <li><kbd>⌃</kbd> <strong>Actions</strong> — AirDrop, shelf, move, copy path, open in Terminal</li>
+  </ul>
+  <p>Drop the file on a slot. When Gearshift has access to the source folder, the result is saved next to the original. Otherwise, the result is saved in Downloads; the original is never changed.</p>
+  <p>On the tutorial's last step, click <strong>Allow Home Folder…</strong> and then <strong>Allow</strong>. App Store apps may only write to folders you allow, so this lets Gearshift save results next to your files.</p>
+
+  <h2>Without dragging</h2>
+  <ul>
+    <li>Select files in Finder → right-click → <strong>Services → Open Gearshift Wheel</strong>. To give it a shortcut, go to System Settings → Keyboard → Keyboard Shortcuts → Services.</li>
+    <li>Menu bar gear → <strong>Convert Files…</strong></li>
+    <li>In a wheel opened this way: <kbd>←</kbd><kbd>→</kbd> choose, <kbd>↩</kbd> run, <kbd>⇥</kbd> next wheel, <kbd>esc</kbd> close.</li>
+  </ul>
+
+  <h2>Frequently asked questions</h2>
+  <details><summary>The wheel doesn’t appear.</summary>
+    <p>Press the key while you are already dragging, then move the pointer a little. Press <kbd>⌃</kbd> only after the drag has started — holding it before you click turns the click into a right-click. You can practice again from the menu bar: gear icon → How to Use….</p></details>
+  <details><summary>My results were saved to Downloads.</summary>
+    <p>Gearshift can only write inside folders you allow. Open Settings → Folders and add the folder (or your home folder). After that, results are saved next to the originals.</p></details>
+  <details><summary>Which formats are supported?</summary>
+    <p>Images: JPG, PNG, HEIC, AVIF, TIFF, BMP, GIF, PDF. PDF: PNG, JPG, TIFF, DOCX (text), TXT. Video: MP4, MOV, M4V, animated GIF, M4A. Audio: M4A, WAV, FLAC, AIFF, CAF. Documents: PDF, DOCX, RTF, TXT, HTML, ODT. Subtitles and tables: SRT, VTT, CSV, TSV. Any file or folder: ZIP, TAR.GZ; extract ZIP, RAR, 7Z, TAR. Formats that macOS can’t decode natively (for example MKV, WebM, AVI, OGG) aren’t supported.</p></details>
+  <details><summary>Can I hide formats I never use?</summary>
+    <p>Yes. Settings → Wheel Formats lets you hide or reorder formats for each kind of file.</p></details>
+  <details><summary>I hid the menu bar icon. How do I get Settings back?</summary>
+    <p>Open Gearshift again from the Applications folder; the Settings window opens.</p></details>
+  <details><summary>How do I uninstall Gearshift?</summary>
+    <p>Quit it from the menu bar icon and move it from Applications to the Trash. To remove its settings too, delete <code>~/Library/Containers/com.jaejunshin.fileconverter</code>.</p></details>
+  <details><summary>Does Gearshift collect any data?</summary>
+    <p>No. Everything runs on your Mac and the app never connects to the internet. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+
+  <div class="contact">
+    <strong>Still need help?</strong>
+    <p class="muted" style="margin:4px 0 0">Tell us your macOS version, the file type, and what happened.</p>
+    <a class="button" href="mailto:jaeshinkorean@gmail.com">Email support</a>
+  </div>
+</main>
+</body>
+</html>
